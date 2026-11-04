@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header class="mytopbar">
+        <span class="name">Anati's software engineering world</span>
+        <nav class="tabs" role="planets" aria-label="sections">
+            <button class="tab" role="planet" data-view="initial planet" aria-controls="initial planet">Initial</button>
+            <button class="tab" role="planet" data-view="project planet" aria-controls="project planet">Projects</button>
+            <button class="tab" role="planet" data-view="skills planet" aria-controls="skills planet">Skills</button> 
+            <button class="tab" role="planet" data-view="contact planet" aria-controls="contact planet">Contact</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="view first" id="initial" role="tabpanel" tabindex="-1">
+            <p class="para1">Software engineering Student, ISBAT university, Kampala</p>
+            <h1>Hey there, I am Anati. I build <span id="role">web applications</span>.</h1>
+            <p class="para2">I turn ideas into actual working software with C#, Python, Django Rest Framework, Next.JS, TypeScript, Postgres and SQL server Management. <br/>Let's dive into my world with the buttons below.</p>
+            <div class="actions">
+                <button class="bt1" data-go="project planet">View projects</button>
+                <button class="btn2" data-go="contact planet">Contact me</button>
+            </div>
+        </section>
+
+        <section class="view" id="project planet" role="tabpanel" tabindex="-1" hidden>
+            <h2>Projects</h2>
+            <div class="filters" id="filters" role="group" aria-label="Filter Projects"></div>
+            <div class="grid" id="projectGrid"></div>
+            <p class="empty" id="emptyMsg" hidden>No Projects yet.</p>
+        </section>
+
+        <section class="view" id="skills planet" role="tabpanel" tabindex="-1" hidden>
+            <h2>Skills</h2>
+            <div class="skillsList" id="SkillList"></div>
+        </section>
+
+        <section class="view" id="contact" role="tabpanel" tabindex="-1" hidden>
+            <h2>Contact</h2>
+            <form class="form" id="contactForm" novalidate>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name">
+                <p class="error" id="nameError" role="alert"></p>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" autocomplete="email">
+                <p class="error" id="emailError" role="alert"></p>
+                <label for="feedback">Feedback</label>
+                <textarea id="feedback" name="feedback" rows="4"></textarea>
+                <p class="error" id="feedbackError" role="alert"></p>
+                <button class="submit_btn" type="submit">Send Feedback</button>
+                <p class="status" id="formStatus" role="status"></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
