@@ -1,15 +1,14 @@
 const profile = {
   email: "anatinuweampiire@gmail.com",
   whatsapp: "256768534257",
-  linkedin: "https://www.linkedin.com/in/your-profile",
-  github: "your-username"
+  linkedin: "https://www.linkedin.com/NuweampiireAnati",
+  github: "Princess-Anati"
 };
 
 const projects = [
   { title: "Banking System", text: "Accounts, deposits, withdrawals and statements in a Django web application modelled on a Ugandan bank.", tags: ["Python", "Django", "PostgreSQL"], repo: "banking-system", featured: true },
   { title: "Family Tracker", text: "A multilingual web app with white-label branding and theming.", tags: ["TypeScript", "Node.js"], repo: "family-tracker", featured: true },
   { title: "Smart Task Manager", text: "Create, organise and prioritise tasks so that nothing slips through.", tags: ["Web app"], repo: "smart-task-manager", featured: true },
-  { title: "Savings Group App", text: "Tracks contributions and loans for a savings group, with roles for leader, treasurer, publicity and secretary.", tags: ["HTML", "CSS", "JavaScript"], repo: "savings-group-app" },
   { title: "Kampala Community SACCO", text: "A staff login and management dashboard backed by SQL Server.", tags: ["C#", "UWP", "SQL Server"], repo: "sacco-app" },
   { title: "Student Result System", text: "Enter marks for each subject and get the total, average and grade instantly.", tags: ["C#", "UWP"], repo: "student-result-system" },
   { title: "Personal Browser", text: "A tabbed web browser with page previews.", tags: ["C#", "UWP"], repo: "personal-browser" },
@@ -17,7 +16,7 @@ const projects = [
 ];
 
 const skillGroups = [
-  { name: "Languages", items: ["C#", "Java", "C", "Python", "TypeScript", "SQL"] },
+  { name: "Languages", items: ["C#", "Java", "Python", "TypeScript", "SQL"] },
   { name: "Web", items: ["HTML", "CSS", "JavaScript", "Next.js", "Django REST Framework"] },
   { name: "Data", items: ["PostgreSQL", "SQL Server", "MySQL"] }
 ];
