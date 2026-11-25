@@ -6,9 +6,9 @@
   --muted: #a3b1c6;
   --accent: #5eead4;
   --accent-ink: #082a2f;
-  --head: "Sora", "Segoe UI", system-ui, sans-serif;
-  --body: "Manrope", "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --head: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, Menlo, monospace;
   --ease: cubic-bezier(0.22, 0.8, 0.3, 1);
   color-scheme: dark;
   box-sizing: border-box;
@@ -209,8 +209,9 @@ body {
 .card p { margin: 0 0 1rem; color: var(--muted); font-size: 0.97rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: auto 0 1rem; padding: 0; list-style: none; }
 .tags li { padding: 0.1rem 0.65rem; font-family: var(--mono); font-size: 0.78rem; color: var(--accent); border: 1px solid var(--line); border-radius: 999px; }
-.more { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
-.card:hover .more { color: var(--accent); }
+.card-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+.card-links a { font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; transition: color 0.25s ease; }
+.card-links a:hover { color: var(--accent); }
 
 .group { margin-bottom: 2rem; }
 .group h3 { margin: 0 0 0.75rem; font-family: var(--mono); font-weight: 400; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }

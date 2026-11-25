@@ -1,14 +1,15 @@
 const profile = {
   email: "anatinuweampiire@gmail.com",
   whatsapp: "256768534257",
-  linkedin: "https://www.linkedin.com/NuweampiireAnati",
+  linkedin: "https://www.linkedin.com/in/Nuweampiire/",
   github: "Princess-Anati"
 };
 
 const projects = [
-  { title: "Banking System", text: "Accounts, deposits, withdrawals and statements in a Django web application modelled on a Ugandan bank.", tags: ["Python", "Django", "PostgreSQL"], repo: "banking-system", featured: true },
-  { title: "Family Tracker", text: "A multilingual web app with white-label branding and theming.", tags: ["TypeScript", "Node.js"], repo: "family-tracker", featured: true },
-  { title: "Smart Task Manager", text: "Create, organise and prioritise tasks so that nothing slips through.", tags: ["Web app"], repo: "smart-task-manager", featured: true },
+  { title: "Banking System", text: "Accounts, deposits, withdrawals and statements in a Django web application modelled on a Ugandan bank.", tags: ["Python", "Django", "PostgreSQL"], links: [{ label: "Backend", url: "https://github.com/eria-developer/yukon-bank-backend" }, { label: "Frontend", url: "https://github.com/eria-developer/yukon-bank-frontend" }], featured: true },
+  { title: "Family Tracker", text: "A multilingual web app with white-label branding and theming.", tags: ["TypeScript", "Node.js"], links: [{ label: "View on GitHub", url: "https://github.com/Ponthius/Family-Tracker" }], featured: true },
+  { title: "Smart Task Manager", text: "Create, organise and prioritise tasks so that nothing slips through.", tags: ["Web app"], links: [{ label: "Backend", url: "https://github.com/lakonyemma/SmartTask-Backend" }], featured: true },
+  { title: "Savings Group App", text: "Tracks contributions and loans for a savings group, with roles for leader, treasurer, publicity and secretary.", tags: ["HTML", "CSS", "JavaScript"], repo: "savings-group-app" },
   { title: "Kampala Community SACCO", text: "A staff login and management dashboard backed by SQL Server.", tags: ["C#", "UWP", "SQL Server"], repo: "sacco-app" },
   { title: "Student Result System", text: "Enter marks for each subject and get the total, average and grade instantly.", tags: ["C#", "UWP"], repo: "student-result-system" },
   { title: "Personal Browser", text: "A tabbed web browser with page previews.", tags: ["C#", "UWP"], repo: "personal-browser" },
@@ -16,7 +17,7 @@ const projects = [
 ];
 
 const skillGroups = [
-  { name: "Languages", items: ["C#", "Java", "Python", "TypeScript", "SQL"] },
+  { name: "Languages", items: ["C#", "Java", "C", "Python", "TypeScript", "SQL"] },
   { name: "Web", items: ["HTML", "CSS", "JavaScript", "Next.js", "Django REST Framework"] },
   { name: "Data", items: ["PostgreSQL", "SQL Server", "MySQL"] }
 ];
@@ -91,11 +92,8 @@ function renderRail() {
 function renderProjects() {
   let extras = 0;
   projects.forEach((project) => {
-    const card = document.createElement("a");
+    const card = document.createElement("article");
     card.className = "card";
-    card.href = "https://github.com/" + profile.github + "/" + project.repo;
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
     if (!project.featured) {
       card.classList.add("extra");
       card.hidden = true;
@@ -112,10 +110,18 @@ function renderProjects() {
       item.textContent = tag;
       tags.appendChild(item);
     });
-    const more = document.createElement("span");
-    more.className = "more";
-    more.textContent = "View on GitHub \u2197";
-    card.append(title, text, tags, more);
+    const links = project.links || [{ label: "View on GitHub", url: "https://github.com/" + profile.github + "/" + project.repo }];
+    const linkRow = document.createElement("div");
+    linkRow.className = "card-links";
+    links.forEach((link) => {
+      const anchor = document.createElement("a");
+      anchor.href = link.url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = link.label + " \u2197";
+      linkRow.appendChild(anchor);
+    });
+    card.append(title, text, tags, linkRow);
     cards.appendChild(card);
   });
 
